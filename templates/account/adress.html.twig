@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Mes adresses - Ma nouvelle boutique {% endblock %}
+{% block content %}
+    <a href="{{path('app_add_adress')}}"class="btn btn-info btn-sm float-right">Ajouter une adresse</a>
+                    <h1> Mes adresses </h1>
+    C'est dans votre espace que vous allez pouvoir gérer toutes vos adresses.
+    <a href='{{path('app_account')}}'>Retour</a><br>
+    <hr>
+    {% if app.user.adresses|length == 0 %}
+    <p class='text-center'>
+        Vous n'avez pas ajouté d'adresses à dans votre compte client. Pour en ajouter une, veuillez<a href='{{path('app_add_adress')}}'> Cliquez ici</a>.
+    </p>
+    {% else %}
+        {% for adress in app.user.adresses %}
+<div class='row'>
+    <div class='col-md-4'>
+        <div class="card" style="width: 18rem;">
+
+            <div class="card-body">
+                <h5 class="card-title">{{adress.name}}</h5>
+                <p class="card-text">
+                {{adress.adress}}, <br>
+                {{adress.codePostal}} - {{adress.city}} - {{adress.pays}}
+                </p>
+                <a href="{{path('app_delete_adress', {'id': adress.id})}}" class="btn btn-danger">Supprimer</a>
+                <a href="{{path('app_edit_adress',{'id': adress.id})}}" class="btn btn-info">Modifier</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+        {% endfor %}
+        {% endif %}
+    
+{% endblock %}

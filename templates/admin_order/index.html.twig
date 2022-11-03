@@ -1,0 +1,46 @@
+{% extends 'base-backend.html.twig' %}
+
+
+{% block title %}Order{% endblock %}
+
+{% block body %}
+    <h1>Order</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>CreatedAt</th>
+                <th>CarrierName</th>
+                <th>CarrierPrice</th>
+                <th>Delivery</th>
+                <th>IsPaid</th>
+                <th>Reference</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for order in orders %}
+            <tr>
+                <td>{{ order.id }}</td>
+                <td>{{ order.createdAt ? order.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ order.carrierName }}</td>
+                <td>{{ order.carrierPrice }}</td>
+                <td>{{ order.delivery }}</td>
+                <td>{{ order.isPaid ? 'Yes' : 'No' }}</td>
+                <td>{{ order.reference }}</td>
+                <td>
+                    <a href="{{ path('app_admin_order_show', {'id': order.id}) }}">Voir </a>
+                    <a href="{{ path('app_admin_order_edit', {'id': order.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">Aucun résultat trouvé.</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_admin_order_new') }}">Créer un nouveau</a>
+{% endblock %}

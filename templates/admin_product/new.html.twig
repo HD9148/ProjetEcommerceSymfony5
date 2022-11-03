@@ -1,0 +1,12 @@
+{% extends 'base-backend.html.twig' %}
+
+
+{% block title %}Nouveau produit{% endblock %}
+
+{% block body %}
+    <h1>Créer un nouveau produit</h1>
+
+    {{ include('admin_product/_form.html.twig') }}
+
+    <a href="{{ path('app_admin_product_index') }}">Retour à la liste</a>
+{% endblock %}

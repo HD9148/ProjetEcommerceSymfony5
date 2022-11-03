@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{product.name}} - Ma Boutique{% endblock %}
+
+{% block content %}
+<div class='row'>
+    <div class='col-md-5'>
+        <img class='w-100 h-75' src="{{ asset('images/products/' ~ product.imageName) }}" alt='{{product.name}}'>
+    </div>
+        <div class=' col-md-7 my-auto'>
+        <h1>{{product.name}}</h1>
+        <p>{{product.subtitle}}</p><hr>
+        <p>
+        {{product.description|raw}}
+        </p>
+        <p>{{product.price}} €</p>
+            {# {{dump(product)}} #}
+        <a href='{{path ('add_to_cart', {'id' : product.id})}}' class='btn btn-primary'> Ajouter au panier </a>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base-backend.html.twig' %}
+
+
+{% block title %}Nouveau Transporteur{% endblock %}
+
+{% block body %}
+    <h1>Nouveau Transporteur</h1>
+
+    {{ include('admin_carrier/_form.html.twig') }}
+
+    <a href="{{ path('app_admin_carrier_index') }}">Retour</a>
+{% endblock %}

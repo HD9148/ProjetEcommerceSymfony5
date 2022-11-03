@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Valider ma commande - La Nouvelle Boutique{% endblock %}
+
+{% block content %}
+<h2>Je passe ma commande</h2>
+
+<p>Choisissez vos préférences avant de passer votre commande.</p>
+<hr>
+
+    <div class="row"> 
+            <div class="col-md-6">
+                {% set formHtml %}
+                {{form_start(form , {action:path('app_order_recap') } )|raw }}
+                    {{form_label(form.adresses, 'Choisissez votre adresse de livraison')|raw }}
+                    <a href="{{path('app_add_adress')}}" class="btn btn-primary ">Ajouter une adresse</a>
+                {{form_end(form)|raw }}
+                {% endset %}
+
+                {{formHtml|replace({'[br]' : '<br/>',})|raw}}
+
+                
+                
+            </div>
+            <div class="col-md-6">
+                <div class="text-center">
+                <b>Récap de ma commande</b></br>
+                <p>Retrouvez le récapitulatif de la commande</p>
+                </div>
+                <div class="order-sumary">
+                {% for key,product in cart %}
+            <div class="row {% if key > 0  %} mt-2 {% endif %}">
+                    <div class="col-2">
+                        <img src="/images/products/{{product.product.imageName}}" alt="{{product.product.name}}" height="75px"><br>
+                    </div>
+                    <div class="col-8 my-auto">
+                        {{product.product.name}}<br/>
+                    </div>
+                    <div class="col-2 my-auto">
+                    x {{product.quantity}}
+                    </div>
+                </div>
+                {% endfor %}
+                </div>
+
+                {# <b>Payé</b> #}
+            </div>
+    </div>
+
+{% endblock %}

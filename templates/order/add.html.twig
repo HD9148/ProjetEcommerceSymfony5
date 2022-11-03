@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block javascript %}
+    <script src="https://js.stripe.com/v3/"></script>
+{% endblock %}
+
+{% block title %}Paiement de ma commande - La Nouvelle boutique{% endblock %}
+
+{% block content %}
+
+<h2>Mon récapitulatif</h2>
+
+<p>Vérifiez  vos informations avant de payer votre commande.</p>
+<hr>
+
+    <div class="row"> 
+        <div class="col-md-6">
+            <strong>Mon adresse de livraison</strong></br>
+            <div class="form-check mt-5">
+                {{delivery|raw}}
+            </div>
+                <hr>
+
+            <strong>Mon transporteur </strong>
+            <div class="form-check mt-5">
+                
+                {{carriere.name|raw}}</br>
+                {{carriere.description|raw}}</br>
+                Prix: {{(carriere.price)|number_format(2,',','.') }}€
+            </div>                
+        </div>
+            <div class="col-md-6">
+                <div class="text-center">
+                <b>Ma commande</b></br>
+                </div>
+                <div class="order-sumary">
+        
+        {% set total = null %}
+                {% for key, product in cart %}
+            <div class="row {% if key > 0  %} mt-2 {% endif %}">
+
+                    <div class="col-2">
+                        <img src="/images/products/{{product.product.imageName}}" alt="{{product.product.name}}" height="75px"><br>
+                    </div>
+                        <div class="col-8 my-auto">
+                            {{product.product.name}}<br/>
+                            </br>
+                            x {{product.quantity}}
+                        </div>
+                    <div class="col-2 my-auto">
+                        {{ ((product.product.price * product.quantity ) / 1)|number_format(2,',','.')}}€
+                    </div>
+                </div>
+          {% set total = total + (product.product.price * product.quantity)  %}
+                {% endfor %}
+                </div>
+
+                <hr>
+
+                <strong>Sous Total : </strong>{{(total / 1)|number_format(2,',','.') }}€</br>
+                <strong>Livraison : </strong>{{(carriere.price)|number_format(2,',','.') }}€
+                
+                <hr>
+
+                <strong>Total : </strong>{{(carriere.price + total)|number_format(2,',','.') }}€
+
+
+
+                <a href="{{ path('app_stripe_create_session', { reference: reference} ) }}" 
+                class="btn btn-success btn-block mt-3"> Payé | {{(carriere.price + total)|number_format(2,',','.') }}€</a>
+            </div>
+    </div>
+
+{% endblock %}

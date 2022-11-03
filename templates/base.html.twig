@@ -1,0 +1,756 @@
+    <!doctype html>
+    <html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Jekyll v4.1.1">
+        <title>{% block title %} Ma nouvelle boutique {% endblock %}</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/boutique.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="home.css" />
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        />
+        <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap"
+        rel="stylesheet"
+        />
+
+        <style>
+            .bd-placeholder-img {
+                font-size: 1.125rem;
+                text-anchor: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                    font-size: 3.5rem;
+                }
+            }
+            *, body {
+        margin: 0;
+        padding: 0;
+    }
+    body::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    body::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    }
+    
+    body::-webkit-scrollbar-thumb {
+    background-color: #F44336;
+    }
+    .dummy-desc {
+        font-size: 14px;
+    }
+    .custom-title {
+    color:  #FF5722;
+    }
+    .navbar a{
+        color: #ff5722;
+    
+    }
+    .navbar a:hover {
+        color: #009688;
+    
+    }
+    .navbar a:active {
+
+        border-bottom: 1px solid #ff5722;
+
+    }
+    .navbar-brand .logo,
+    footer .logo{
+        font-family: 'Dancing Script', cursive;
+        font-size: 2em;
+        color: #ff5722;
+    }
+    .container-fluid .banner {
+        background: linear-gradient(to bottom, #ff9800d4, #FFC107);
+    height: 500px;
+    }
+    .inner-banner {
+        border: 2px solid #fff;
+    }
+    .container-fluid .banner .image {
+        background: url(12.png) no-repeat;
+        background-size: contain;
+    }
+    .container-fluid .banner .content {
+        color: #fff;
+        line-height: 25px;
+    }
+    .container-fluid .banner .content h1{
+        font-family: 'Dancing Script', cursive;
+        font-size: 5em;
+        color: #FF5722;
+        text-shadow: 2px 2px #009688;
+    }
+
+    .button .btn,
+    .card .btn {
+        font-size: 16px;
+        font-weight: 600;
+        color: #FF5722;
+        border: 1px solid #FF5722;
+        border-radius: 0;
+    }
+    .button .btn:hover,
+    .card .btn:hover
+    {
+    background: #FF5722;
+    color: #fff;
+    }
+
+    /* collection */
+    .collections .card img {
+        height: 200px;
+        
+    }
+    .collections .card .card-title {
+        color: #009688;
+        }
+        /* sale section */
+    .sale-section {
+        height: 350px;
+        background: url(3.png) no-repeat;
+        background-size: cover;
+    color: #fff;
+    line-height: 25px;
+    }   
+    .sale-section h2 {
+        font-family: 'Dancing Script', cursive;
+        font-size: 3em; 
+    }
+    /* grid */
+
+    .grid{
+        height: 300px;
+    }
+    .grid:hover {
+        opacity: 0.6;
+        color: #fff;
+    }
+    .grid .button {
+        height: 300px;
+    }
+    .grid:hover .button {
+        height: 275px;
+        margin: 15px 0px;
+        border: 1px solid #fff;
+    }
+    .grid .button {
+    visibility: hidden;}
+    .grid:hover > .button {
+    visibility: visible;
+        cursor: pointer;
+    }
+    .grid-1 .grid-1-1 {
+        background: url(1.jpg) no-repeat;
+        background-size: cover; 
+    } 
+    .grid-1 .grid-1-2 {
+        background: url(2.jpg) no-repeat;
+        background-size: cover; 
+    } 
+    .grid-2 .grid-2-1 {
+        background: url(3.jpg) no-repeat;
+        background-size: cover; 
+    } 
+    .grid-2 .grid-2-2 {
+        background: url(4.jpg) no-repeat;
+        background-size: cover; 
+    } 
+    .grid-2 .grid-2-3 {
+        background: url(5.jpg) no-repeat;
+        background-size: cover; 
+    } 
+    .grid-3 .grid-3-1 {
+        background: url(6.jpg) no-repeat;
+        background-size: cover; 
+    } 
+    .grid-3 .grid-3-2 {
+        background: url(7.jpg) no-repeat;
+        background-size: cover; 
+    } 
+    .footer {
+        background: url(2.png) no-repeat;
+        background-size: cover;
+        height: 300px;
+        padding: 15px;
+    background-color: #333;
+    color: #fff;
+    }
+    .footer .footer-widget {
+        border-right: 1px solid #fff;
+    }
+    .footer .footer-widget:last-child
+    {
+    border-right:0px;
+    }
+    .footer-widget h5 {
+        color: #ff5722;
+    }
+    /* footer-widget two */
+    .footer-widget.two ul > li {
+    list-style: none;
+    cursor: pointer;
+    }
+    .footer-widget.two ul > li:hover {
+    color: #ff5722;    }
+    /* footer-widget three */
+    /* social icons */
+    .footer .fa {
+        padding: 10px 0px;
+        font-size: 20px;
+        width: 23%;
+        border-radius: 50%;
+        line-height: 30px;
+        text-align: center;
+        text-decoration: none;
+        margin: 10px 10px;
+        color: #fff;
+    }
+    .footer a:hover {
+        text-decoration: none;
+    }
+    .footer .fa-facebook {
+        background: #3B5998;
+    }
+    
+    .footer .fa-twitter {
+        background: #55ACEE;
+    }
+    
+    .footer .fa-google {
+        background: #dd4b39;
+    }
+    
+    .footer .fa-linkedin {
+        background: #007bb5;
+    }
+    
+    .footer .fa-youtube {
+        background: #bb0000;
+    }
+    
+    .footer .fa-instagram {
+        background: #125688;
+    }
+    .copyright {
+
+        background: #ff5722;  
+    } 
+    .copyright b {
+        color: #fff;
+        cursor: pointer;
+    }
+        </style>
+        <!-- Custom styles for this template -->
+        <link href="{{ asset('assets/css/carousel.css') }}" rel="stylesheet">
+    </head>
+    <body>
+    <header>
+
+        {# <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="{{path('app_home')}}">Ma nouvelle boutique |</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{path('app_products')}}"> Nos produits <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#"> Qui sommes nous ?<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#"> Contact <span class="sr-only">(current)</span></a>
+                    </li>
+
+                </ul>
+                <div class='navbar-custom-item'>
+                {% if app.user %}            
+                <a href='{{path('app_account')}}'>Mon compte ({{ app.user.firstName }})</a> | <a href='{{path('app_logout')}}'>Se déconnecter</a>
+                </div>
+                <a href='{{path('app_cart')}}'>
+                <img src='{{asset('assets/img/shopping-cart.png')}}' class='cart-icon' alt='Mon Panier'>
+                </a>
+                {% else %}
+                <a href='{{path('app_login')}}'>Connexion</a> | <a href='{{path('app_register')}}'>Inscription</a>
+                {% endif %}
+                
+            </div>
+
+            
+
+
+
+        </nav> #}
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+            <a class="navbar-brand" href="{{path('app_home')}}">
+                <strong class="logo">La Nouvelle Boutique</strong>
+            </a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                <li class="nav-item active mx-3">
+                    <a class="nav-link" href="{{path('app_home')}}"
+                    >Home
+                    <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item mx-3">
+                    <a class="nav-link" href="{{path('app_products')}}">Nos Produits</a>
+                </li>
+                <li class="nav-item mx-3">
+                    <a class="nav-link" href="#">A propos de nous</a>
+                </li>
+                <li class="nav-item mx-3">
+                    <a class="nav-link" href="#">Contact</a>
+                <li class="nav-item mx-3">
+                {% if app.user %}            
+                <li class="nav-item mx-3">
+                <a class="nav-link" href='{{path('app_account')}}'>Mon compte ({{ app.user.firstName }})</a>
+                </li>
+                <li class="nav-item mx-3">
+                <a href='{{path('app_logout')}}'>Se déconnecter</a>
+                </li>
+                <li>
+                <a class="nav-link bg-dark mx-3" href='{{path('app_cart')}}'>
+                <img src='{{asset('assets/img/shopping-cart.png')}}' class='cart-icon' alt='Mon Panier'>
+                </a>
+                </li>
+                {% else %}
+                <li class="nav-item mx-3">
+                <a  class="nav-link" href='{{path('app_login')}}'>Connexion</a> 
+                </li>
+                <li class="nav-item mx-3">
+                <a class="nav-link" href='{{path('app_register')}}'>Inscription</a>
+                </li>
+                {% endif %}
+                </ul>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+    {# <div class="container-fluid">
+        <!-- banner -->
+        <div class="row banner" color="primary">
+            <div class="row col-md inner-banner m-4">
+            <div class="col-md-6 content bg-circle align-self-center text-center">
+                <h1 class="text-center">Hello Summer!</h1>
+                <h5>Enjoy Amazing summer 2022 sale</h5>
+                <p class="dummy-desc">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy text
+                ever since the 1500s, when an unknown printer took a galley of
+                type and scrambled it to make a type specimen book.
+                </p>
+                <div class="button">
+                <button type="button" class="btn">
+                    Shop Now <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                </button>
+                </div>
+            </div>
+            <div class="col-md-6 image alig-end">
+                <div class=""></div>
+            </div>
+            </div>
+        </div>
+        </div> #}
+
+    {# <main role="main">
+
+        {% if block ('carousel') is defined %}
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+                    <div class="container">
+                        <div class="carousel-caption text-left">
+                            <h1>Example headline.</h1>
+                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>Another example headline.</h1>
+                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+                    <div class="container">
+                        <div class="carousel-caption text-right">
+                            <h1>One more for good measure.</h1>
+                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div> #}
+        {# {% endif %} #}
+
+        {# <div class="container text-center about my-5">
+        <div class="row">
+            <div class="col-lg col-md col-sm col-xs">
+            <h2 class="custom-title my-5">
+                What We Offer
+            </h2>
+            <p class="dummy-desc">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy text
+                ever since the 1500s, when an unknown printer took a galley of type
+                and scrambled it to make a type specimen book.
+            </p>
+            </div>
+        </div>
+        </div>
+
+        <!-- collection -->
+        <div class="container text-center collections my-5">
+        <h2 class="custom-title">New Collections</h2>
+        <div class="row my-5">
+            <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="p-4.jpg" alt="Card image cap" />
+                <div class="card-body">
+                <h5 class="card-title">Ladies Bags</h5>
+                <p class="card-text dummy-desc">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy
+                    text ever since the 1500s, when an unknown printer took a galley
+                    of type and scrambled it to make a type specimen book.
+                </p>
+                <a href="#" class="btn"
+                    >Add to Cart
+                    <i class="fa fa-shopping-bag" aria-hidden="true"></i
+                ></a>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="p-6.jpg" alt="Card image cap" />
+                <div class="card-body">
+                <h5 class="card-title">Boys Collections</h5>
+                <p class="card-text dummy-desc">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy
+                    text ever since the 1500s, when an unknown printer took a galley
+                    of type and scrambled it to make a type specimen book.
+                </p>
+                <a href="#" class="btn"
+                    >Add to Cart
+                    <i class="fa fa-shopping-bag" aria-hidden="true"></i
+                ></a>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="p-1.jpg" alt="Card image cap" />
+                <div class="card-body">
+                <h5 class="card-title">Tiny Jeans</h5>
+                <p class="card-text dummy-desc">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy
+                    text ever since the 1500s, when an unknown printer took a galley
+                    of type and scrambled it to make a type specimen book.
+                </p>
+                <a href="#" class="btn"
+                    >Add to Cart
+                    <i class="fa fa-shopping-bag" aria-hidden="true"></i
+                ></a>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="p-2.jpg" alt="Card image cap" />
+                <div class="card-body">
+                <h5 class="card-title">Red & Black</h5>
+                <p class="card-text dummy-desc">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy
+                    text ever since the 1500s, when an unknown printer took a galley
+                    of type and scrambled it to make a type specimen book.
+                </p>
+                <a href="#" class="btn"
+                    >Add to Cart
+                    <i class="fa fa-shopping-bag" aria-hidden="true"></i
+                ></a>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="p-3.jpg" alt="Card image cap" />
+                <div class="card-body">
+                <h5 class="card-title">Shoes</h5>
+                <p class="card-text dummy-desc">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy
+                    text ever since the 1500s, when an unknown printer took a galley
+                    of type and scrambled it to make a type specimen book.
+                </p>
+                <a href="#" class="btn"
+                    >Add to Cart
+                    <i class="fa fa-shopping-bag" aria-hidden="true"></i
+                ></a>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="p-5.jpg" alt="Card image cap" />
+                <div class="card-body">
+                <h5 class="card-title">Sneakers</h5>
+                <p class="card-text dummy-desc">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy
+                    text ever since the 1500s, when an unknown printer took a galley
+                    of type and scrambled it to make a type specimen book.
+                </p>
+                <a href="#" class="btn"
+                    >Add to Cart
+                    <i class="fa fa-shopping-bag" aria-hidden="true"></i
+                ></a>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- sale -->
+        <div class="container-fluid text-center my-5">
+        <div class="row sale-section">
+            <div class="col-md align-self-center">
+            <h2>Enjoy a Big Sale!</h2>
+            <h5>50% off on entire stock</h5>
+            <div class="button my-4">
+                <button type="button" class="btn">
+                Shop Now <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                </button>
+            </div>
+            </div>
+        </div>
+        </div> #}
+        <!-- new arrival -->
+        {# <div class="container my-5 text-center">
+        <h2 class="custom-title my-5">New Arrival</h2>
+
+        <div class="row grid-1">
+            <div class="col-12 col-md-8 col-sm-6 col-xs-4 grid grid-1-1">
+            <div class="button align-items-center">
+                <div class="row align-items-center">
+                <div class="col-md">
+                    <h3 class="title">sjakgdask</h3>
+                    <button type="button" class="btn">
+                    Shop Now <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                    </button>
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="col-6 col-md-4 col-sm-2 col-xs grid grid-1-2">
+            <div class="button">
+                <button type="button" class="btn align-self-center">
+                Shop Now <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                </button>
+            </div>
+            </div>
+        </div>
+
+        <div class="row grid-2">
+            <div class="col-6 col-md-4 grid grid-2-1">
+            <div class="button">
+                <button type="button" class="btn align-self-center">
+                Shop Now <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                </button>
+            </div>
+            </div>
+            <div class="col-6 col-md-4 grid grid-2-2">
+            <div class="button">
+                <button type="button" class="btn align-self-center">
+                Shop Now <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                </button>
+            </div>
+            </div>
+            <div class="col-6 col-md-4 grid grid-2-3">
+            <div class="button">
+                <button type="button" class="btn align-self-center">
+                Shop Now <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                </button>
+            </div>
+            </div>
+        </div>
+        <div class="row grid-3">
+            <div class="col-6 grid grid-3-1">
+            <div class="button">
+                <button type="button" class="btn align-self-center">
+                Shop Now <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                </button>
+            </div>
+            </div>
+            <div class="col-6 grid grid-3-2">
+            <div class="button">
+                <button type="button" class="btn align-self-center">
+                Shop Now <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                </button>
+            </div>
+            </div>
+        </div>
+        </div> #}
+        <!-- carousel -->
+    {# {% block content %}{% endblock %} #}
+    {% block content %}{% endblock %}
+        <!-- footer -->
+        <footer class="footer ">
+        <div class="container">
+            <div class="row">
+            <div class="col-md-3 footer-widget one">
+                <strong class="logo">La Nouvelle Boutique</strong>
+                <div class="row">
+                <div class="col-md">
+                    <p class="dummy-desc">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy text
+                    ever since the 1500s, when an unknown printer took a galley of
+                    type and scrambled it to make a type specimen book.
+                    </p>
+                </div>
+                </div>
+            </div>
+            <div class="col-md-3 footer-widget two">
+                <h5>Categories</h5>
+                <ul>
+                <li>Sale</li>
+                <li>Shoes</li>
+                <li>Ladies Bags</li>
+                <li>Summer Collections</li>
+                <li>Men Collection</li>
+                <li>Women Collection</li>
+                </ul>
+            </div>
+            <div class="col-md-3 footer-widget three">
+                <h5>Folow Us on Social Media</h5>
+                <div class="row"></div>
+                <div class="social-icons col-md">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-google"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+                <a href="#" class="fa fa-youtube"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                </div>
+            </div>
+            <div class="col-md-3 footer-widget four">
+                <h5>What's New</h5>
+                <div class="news">
+                <div></div>
+                <div class="media my-2">
+                    <img
+                    src="banner1.jpg"
+                    class="mx-2"
+                    height="64px"
+                    width="64px"
+                    alt="..."
+                    />
+                    <div class="media-body">
+                    Cras sit amet nibh libero, in gravida nulla.
+                    </div>
+                </div>
+                <div class="media">
+                    <img
+                    src="banner2.jpg"
+                    class="mx-2"
+                    height="64px"
+                    width="64px"
+                    alt="..."
+                    />
+                    <div class="media-body">
+                    Cras sit amet nibh libero, in gravida nulla.
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </footer>
+        <div class="copyright text-center">
+        <span class="text-center"
+            >Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2022 |
+            Developed By <b> Umar Mughal</b></span
+        >
+        </div>
+
+        <!-- Marketing messaging and featurettes
+        ================================================== -->
+        <!-- Wrap the rest of the page in another container to center all the content. -->
+
+        <div class="container marketing {% if block('carousel') is not defined %} mt-5 {% endif %}"  >
+                
+        </div><!-- /.container -->
+
+        <!-- FOOTER -->
+        {# <footer class="footer-custom">
+            <p class="float-right">  La Nouvelle boutique </p>
+            <p> 2022 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        </footer> #}
+    </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="{{ asset('assets/js/bootstrap.bundle.js') }}"></script>
+    </body>
+    </html>

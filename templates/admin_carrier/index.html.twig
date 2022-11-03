@@ -1,0 +1,40 @@
+{% extends 'base-backend.html.twig' %}
+
+
+{% block title %}Transporteur{% endblock %}
+
+{% block body %}
+    <h1>Transporteur</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for carrier in carriers %}
+            <tr>
+                <td>{{ carrier.id }}</td>
+                <td>{{ carrier.name }}</td>
+                <td>{{ carrier.description|raw }}</td>
+                <td>{{ carrier.price }}</td>
+                <td>
+                    <a href="{{ path('app_admin_carrier_show', {'id': carrier.id}) }}">Voir</a>
+                    <a href="{{ path('app_admin_carrier_edit', {'id': carrier.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Aucun résultat trouvé.</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_admin_carrier_new') }}">Créer un nouveau</a>
+{% endblock %}

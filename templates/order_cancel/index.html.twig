@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Echec paiement - Ma Boutique{% endblock %}
+
+{% block content %}
+<h2>Echec de paiement</h2>
+    <p>Bonjour <strong>{{order.user.firstName}}  {{order.user.lastName}}</strong>, <br/><br/>
+        Votre paiment est échoué pour votre commande n°<strong>{{order.reference}}</strong>. <br/>
+        Une confirmation d'echec de paiement vient de vous être envoyée par email à l'adresse <strong>{{order.user.email}}</strong>.
+    </p>
+    <a href="{{path('app_order')}}" class='btn btn-success'>Réessayez le paiement</a>
+
+{% endblock %}

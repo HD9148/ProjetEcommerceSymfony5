@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produits - Ma Boutique{% endblock %}
+
+{% block content %}
+    <div class="row ms-3">
+                    <div class="col-md-3 ">
+                        <h3>Filtrer</h3>
+                        {{form(form)}}
+                    </div>
+        
+    <div class='col-md-9'>
+    <h1>Nos produits</h1>
+    <div class="row product-container">
+        {% for product in products %}
+        <div class='col-md-4'>
+            <div class='product-item text-center my-3'>
+                <h4>{{product.name}}</h4>
+                <span class='product-subtitle'>{{product.subtitle}}</span><br>
+                <a href="{{path('app_product', {'id' : product.id})}}"><img src="{{ asset('images/products/' ~ product.imageName) }}" data-lightbox="image-{{ loop.index0 }}" data-title="{{ product.name }}"></a><br>
+                <span class='product-price'>{{product.price}}€</span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+        </div>
+
+{% endblock %}

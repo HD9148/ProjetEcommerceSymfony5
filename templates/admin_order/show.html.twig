@@ -1,0 +1,47 @@
+{% extends 'base-backend.html.twig' %}
+
+
+{% block title %}Order{% endblock %}
+
+{% block body %}
+    <h1>Order</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ order.id }}</td>
+            </tr>
+            <tr>
+                <th>CreatedAt</th>
+                <td>{{ order.createdAt ? order.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>CarrierName</th>
+                <td>{{ order.carrierName }}</td>
+            </tr>
+            <tr>
+                <th>CarrierPrice</th>
+                <td>{{ order.carrierPrice }}</td>
+            </tr>
+            <tr>
+                <th>Delivery</th>
+                <td>{{ order.delivery }}</td>
+            </tr>
+            <tr>
+                <th>IsPaid</th>
+                <td>{{ order.isPaid ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Reference</th>
+                <td>{{ order.reference }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_admin_order_index') }}">Retour</a>
+
+    <a href="{{ path('app_admin_order_edit', {'id': order.id}) }}">Modifier</a>
+
+    {{ include('admin_order/_delete_form.html.twig') }}
+{% endblock %}

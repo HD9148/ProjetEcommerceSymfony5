@@ -1,0 +1,12 @@
+{% extends 'base-backend.html.twig' %}
+
+
+{% block title %}Nouveau Order{% endblock %}
+
+{% block body %}
+    <h1>Créer un nouveau</h1>
+
+    {{ include('admin_order/_form.html.twig') }}
+
+    <a href="{{ path('app_admin_order_index') }}">Retour</a>
+{% endblock %}

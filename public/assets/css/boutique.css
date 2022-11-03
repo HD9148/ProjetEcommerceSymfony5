@@ -1,0 +1,297 @@
+    /* .navbar-custom-item, .navbar-custom-item a{
+        color:#fff;
+    }
+
+    .footer-custom{
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #dfeaff;
+        padding-top: 25px;
+    }
+
+    .product-item{
+        margin-top: 50px;
+    }
+    .product-item h5{
+        text-transform: uppercase;
+        font-size: 15px;
+        margin-bottom: 1px;
+    }
+
+    .product-item .product-subtitle{
+        font-size: 14px;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .product-item .product-price{
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .product-container{
+        margin-bottom: 300px;
+    }
+    .cart-icon{
+        height: 20px;
+        padding-left: 20px;
+    }
+
+    .block-small{
+        max-width: 600px;
+        margin:0 auto;
+    }
+
+    .col-form-label{
+        font-weight: bold;
+    }
+
+    .order-sumary{
+        background-color: #f4f8ff;
+        padding: 20px;
+        margin-top: 22px;
+    } */
+
+    /* **/
+
+    /* .navbar{
+        z-index:99;
+    }
+    body{
+        padding-top: 8em;
+    }
+
+    .sliderFade{
+        animation: fade 0.5s ease;
+    }
+    .sliderFade, .sliderMainImage{
+        cursor: pointer;
+    }   
+
+    @keyframes fade {
+        0% {opacity:0;}
+        100%{opacity:1}
+    } */
+    *, body {
+        margin: 0;
+        padding: 0;
+    }
+    body::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    body::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    }
+    
+    body::-webkit-scrollbar-thumb {
+    background-color: #F44336;
+    }
+    .dummy-desc {
+        font-size: 14px;
+    }
+    .custom-title {
+    color:  #FF5722;
+    }
+    .navbar a{
+        color: #ff5722;
+    
+    }
+    .navbar a:hover {
+        color: #009688;
+    
+    }
+    .navbar a:active {
+
+        border-bottom: 1px solid #ff5722;
+
+    }
+    .navbar-brand .logo,
+    footer .logo{
+        font-family: 'Dancing Script', cursive;
+        font-size: 2em;
+        color: #ff5722;
+    }
+    .container-fluid .banner {
+        background: linear-gradient(to bottom, #ff9800d4, #FFC107);
+    height: 500px;
+    }
+    .inner-banner {
+        border: 2px solid #fff;
+    }
+    .container-fluid .banner .image {
+        background: url(12.png) no-repeat;
+        background-size: contain;
+    }
+    .container-fluid .banner .content {
+        color: #fff;
+        line-height: 25px;
+    }
+    .container-fluid .banner .content h1{
+        font-family: 'Dancing Script', cursive;
+        font-size: 5em;
+        color: #FF5722;
+        text-shadow: 2px 2px #009688;
+    }
+
+    .button .btn,
+    .card .btn {
+        font-size: 16px;
+        font-weight: 600;
+        color: #FF5722;
+        border: 1px solid #FF5722;
+        border-radius: 0;
+    }
+    .button .btn:hover,
+    .card .btn:hover
+    {
+    background: #FF5722;
+    color: #fff;
+    }
+
+    /* collection */
+    .collections .card img {
+        height: 200px;
+        
+    }
+    .collections .card .card-title {
+        color: #009688;
+        }
+        /* sale section */
+    .sale-section {
+        height: 350px;
+        background: url(3.png) no-repeat;
+        background-size: cover;
+    color: #fff;
+    line-height: 25px;
+    }   
+    .sale-section h2 {
+        font-family: 'Dancing Script', cursive;
+        font-size: 3em; 
+    }
+    /* grid */
+
+    .grid{
+        height: 300px;
+    }
+    .grid:hover {
+        opacity: 0.6;
+        color: #fff;
+    }
+    .grid .button {
+        height: 300px;
+    }
+    .grid:hover .button {
+        height: 275px;
+        margin: 15px 0px;
+        border: 1px solid #fff;
+    }
+    .grid .button {
+    visibility: hidden;}
+    .grid:hover > .button {
+    visibility: visible;
+        cursor: pointer;
+    }
+    .grid-1 .grid-1-1 {
+        background: url(1.jpg) no-repeat;
+        background-size: cover; 
+    } 
+    .grid-1 .grid-1-2 {
+        background: url(2.jpg) no-repeat;
+        background-size: cover; 
+    } 
+    .grid-2 .grid-2-1 {
+        background: url(3.jpg) no-repeat;
+        background-size: cover; 
+    } 
+    .grid-2 .grid-2-2 {
+        background: url(4.jpg) no-repeat;
+        background-size: cover; 
+    } 
+    .grid-2 .grid-2-3 {
+        background: url(5.jpg) no-repeat;
+        background-size: cover; 
+    } 
+    .grid-3 .grid-3-1 {
+        background: url(6.jpg) no-repeat;
+        background-size: cover; 
+    } 
+    .grid-3 .grid-3-2 {
+        background: url(7.jpg) no-repeat;
+        background-size: cover; 
+    } 
+    .footer {
+        background: url(2.png) no-repeat;
+        background-size: cover;
+        height: 300px;
+        padding: 15px;
+    background-color: #333;
+    color: #fff;
+    }
+    .footer .footer-widget {
+        border-right: 1px solid #fff;
+    }
+    .footer .footer-widget:last-child
+    {
+    border-right:0px;
+    }
+    .footer-widget h5 {
+        color: #ff5722;
+    }
+    /* footer-widget two */
+    .footer-widget.two ul > li {
+    list-style: none;
+    cursor: pointer;
+    }
+    .footer-widget.two ul > li:hover {
+    color: #ff5722;    }
+    /* footer-widget three */
+    /* social icons */
+    .footer .fa {
+        padding: 10px 0px;
+        font-size: 20px;
+        width: 23%;
+        border-radius: 50%;
+        line-height: 30px;
+        text-align: center;
+        text-decoration: none;
+        margin: 10px 10px;
+        color: #fff;
+    }
+    .footer a:hover {
+        text-decoration: none;
+    }
+    .footer .fa-facebook {
+        background: #3B5998;
+    }
+    
+    .footer .fa-twitter {
+        background: #55ACEE;
+    }
+    
+    .footer .fa-google {
+        background: #dd4b39;
+    }
+    
+    .footer .fa-linkedin {
+        background: #007bb5;
+    }
+    
+    .footer .fa-youtube {
+        background: #bb0000;
+    }
+    
+    .footer .fa-instagram {
+        background: #125688;
+    }
+    .copyright {
+
+        background: #ff5722;  
+    } 
+    .copyright b {
+        color: #fff;
+        cursor: pointer;
+    }
+

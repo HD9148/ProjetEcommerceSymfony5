@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Gérer mes adressse - Ma nouvelle boutique {% endblock %}
+{% block content %}
+                    <h1> Gérer une adressse </h1>
+    C'est dans votre espace que vous allez pouvoir gérer toutes vos adresses.
+    <hr>
+    {{form_start(form)}}
+    <div class='row'>
+        <div class='col-md-12'>{{form_row(form.name)}}</div>
+        <div class='col-md-6'>{{form_row(form.firstName)}}</div>
+        <div class='col-md-6'>{{form_row(form.lastName)}}</div>
+        <div class='col-md-6'>{{form_row(form.company)}}</div>
+        <div class='col-md-6'>{{form_row(form.adress)}}</div>
+        <div class='col-md-6'>{{form_row(form.codePostal)}}</div>
+        <div class='col-md-6'>{{form_row(form.city)}}</div>
+        <div class='col-md-6'>{{form_row(form.pays)}}</div>
+        <div class='col-md-6'>{{form_row(form.phone)}}</div>
+    </div>
+    {{form_end(form)}}
+    <a href='{{path('app_account_adress')}}'>Retour</a><br>
+    
+{% endblock %}

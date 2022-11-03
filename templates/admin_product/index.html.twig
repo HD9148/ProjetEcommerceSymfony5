@@ -1,0 +1,56 @@
+{% extends 'base-backend.html.twig' %}
+
+
+{% block title %}Produits {% endblock %}
+
+{% block body %}
+    <h1>Produit</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                {# <th>Slug</th> #}
+                <th>Subtitle</th>
+                {# <th>Description</th> #}
+                <th>Prix</th>
+                <th>Image produit</th>
+                <th>Mise à jour</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.name }}</td>
+                {# <td>{{ product.slug }}</td> #}
+                {# <td>{{ product.description }}</td> #}
+                {# <td>{{ product.imageName }}</td> #}
+                <td>{{ product.subtitle }}</td>
+                <td>{{ product.price }}</td>
+                <td>
+
+                {% if product.imageName is defined and product.imageName is not null %}
+                <a href="{{ asset('images/products/' ~ product.imageName) }}" data-lightbox="image-{{ loop.index0 }}" data-title="{{ product.name }}">
+                    <img src="{{ asset('images/products/' ~ product.imageName) }}" alt="" class="img-list">
+                {% else %}
+                N/A
+                {% endif %}
+                </td>
+                <td>{{ product.updatedAt ? product.updatedAt|date('d-m-Y H:i:s') : 'N/A'}}</td>
+                <td>
+                    <a href="{{ path('app_admin_product_show', {'id': product.id}) }}">Voir</a>
+                    <a href="{{ path('app_admin_product_edit', {'id': product.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">Aucun résultat trouvé.</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_admin_product_new') }}">Créer un nouveau</a>
+{% endblock %}
